@@ -16,7 +16,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
       backgroundColor: Colors.lightBlue,
       // type: BottomNavigationBarType.fixed,
       unselectedItemColor: Colors.black54,
-      selectedItemColor: Color.fromARGB(255, 46, 38, 211),
+      selectedItemColor: const Color.fromARGB(255, 46, 38, 211),
       currentIndex: navigationProv,
       onTap: (value)=> ref
         .watch(navigationProvider.notifier)

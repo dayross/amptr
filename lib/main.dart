@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
-        colorSchemeSeed: Color.fromARGB(255, 40, 55, 35),
+        colorSchemeSeed: const Color.fromARGB(255, 40, 55, 35),
         fontFamily: 'Red Hat'),
       home: const ButtonScreen()
     );

@@ -1,5 +1,7 @@
 
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:amptr/presentation/shared/widgets/widgets.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class GreetingScreen extends StatelessWidget {
 
 class _NightScreen extends StatelessWidget {
   const _NightScreen({
-    super.key,
+    
     required this.size,
   });
 
@@ -116,7 +118,7 @@ class _NightScreen extends StatelessWidget {
 
 class _EveningScreen extends StatelessWidget {
   const _EveningScreen({
-    super.key,
+    
     required this.size,
   });
 
@@ -201,7 +203,7 @@ class _EveningScreen extends StatelessWidget {
 
 class _MorningScreen extends StatelessWidget {
   const _MorningScreen({
-    super.key,
+    
     required this.size,
   });
 
