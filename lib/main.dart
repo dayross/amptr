@@ -1,3 +1,4 @@
+import 'package:amptr/config/config.dart';
 import 'package:amptr/presentation/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,11 +14,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        scaffoldBackgroundColor: Colors.white,
-        colorSchemeSeed: const Color.fromARGB(255, 40, 55, 35),
-        fontFamily: 'Red Hat'),
+      theme: AppTheme().getTheme(),
       home: const ButtonScreen()
     );
   }

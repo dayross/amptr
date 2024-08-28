@@ -10,13 +10,13 @@ class CustomBottomNavigationBar extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final navigationProv = ref.watch(navigationProvider);
+    final colors = Theme.of(context).colorScheme;
 
     return BottomNavigationBar(
-      elevation: 0.0,
-      backgroundColor: Colors.lightBlue,
-      // type: BottomNavigationBarType.fixed,
-      unselectedItemColor: Colors.black54,
-      selectedItemColor: const Color.fromARGB(255, 46, 38, 211),
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      unselectedItemColor: colors.secondary,
+      selectedItemColor: colors.primary,
       currentIndex: navigationProv,
       onTap: (value)=> ref
         .watch(navigationProvider.notifier)

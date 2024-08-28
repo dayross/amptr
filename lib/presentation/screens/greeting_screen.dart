@@ -35,7 +35,6 @@ class _NightScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
       backgroundColor: const Color.fromARGB(255, 16, 22, 89),
       body: Stack(
         children: [
@@ -128,7 +127,6 @@ class _EveningScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        extendBody: true,
         backgroundColor: Colors.blue[300],
         body: Stack(
           children: [
@@ -212,7 +210,6 @@ class _MorningScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
       backgroundColor: Colors.blue[100],
       body: Stack(
         children: [

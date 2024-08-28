@@ -16,20 +16,22 @@ class ButtonScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref,) {
     final size = MediaQuery.of(context).size;
     final DateTime dt = DateTime.now();
+    final colors = Theme.of(context).colorScheme;
     
 
     return Scaffold(
-      // extendBody: true,
-      // backgroundColor:  Color.fromARGB(255, 127, 156, 117),
+      extendBody: true,
+      backgroundColor:  colors.secondary,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FilledButton.icon(
               style: FilledButton.styleFrom(
+                elevation: 5,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40),),
                 fixedSize: Size(size.width*0.4, size.height*0.07),
-                backgroundColor: Color.fromARGB(255, 40, 55, 35)
+                backgroundColor: colors.primary
               ),
               // onPressed: ()=> ref.watch(homeScreenProvider.notifier).state = true,
               onPressed: (){
@@ -50,14 +52,6 @@ class ButtonScreen extends ConsumerWidget {
           ]
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   elevation: 0,
-      //   backgroundColor: Colors.transparent,
-      //   items: [
-      //     BottomNavigationBarItem(icon: Icon(Icons.ac_unit_outlined), label: "Hola"),
-      //     BottomNavigationBarItem(icon: Icon(Icons.ac_unit_outlined), label: "Hola"),
-      //     BottomNavigationBarItem(icon: Icon(Icons.ac_unit_outlined), label: "Hola"),
-      //   ]),
     );
   }
 }
