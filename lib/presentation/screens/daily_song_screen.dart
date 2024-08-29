@@ -8,15 +8,34 @@ class DailySongScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final colors = Theme.of(context).colorScheme;
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: Center(child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-        Text("Tu canción del día es...",
-            style: subtituloUno,),
+        const Text("Tu canción del día es...",
+            style: tituloGrandeBold,),
+        SizedBox(height: size.height*0.07,),
+        ClipRRect(
+          child: Image.network('https://m.media-amazon.com/images/I/A1Bn8jt+wUL.jpg',
+          width: size.width*0.6,),
+          borderRadius: BorderRadius.circular(20),),
+        SizedBox(height: size.height*0.04,),
+        Text('Titulo de canción', style: tituloPequeno,),
+        SizedBox(height: size.height*0.01,),
+        Text('Artista de Canción', style: subtituloDos,),
+        SizedBox(height: size.height*0.05,),
+        FilledButton(
+          style: FilledButton.styleFrom(
+            fixedSize: Size(size.width*0.45, size.height*0.07)
+          ),
+          onPressed: (){}, 
+          child: Row(children: [
+            Image.asset('assets/images/icons/spotify_negro.png', width: size.width*0.08,),
+            SizedBox(width: 20,),
+            Text("Escuchala ya", style: subtituloDosBlanco,)
+          ],))
       ],),),
     );
   }

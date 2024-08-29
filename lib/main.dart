@@ -3,7 +3,12 @@ import 'package:amptr/presentation/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Environment.initEnvironment();
+  
   runApp(const ProviderScope(child: MainApp()));
 }
 
