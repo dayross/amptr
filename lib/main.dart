@@ -21,6 +21,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
       home: const ButtonScreen()
+      // home: const DailySongScreen()
     );
   }
 }

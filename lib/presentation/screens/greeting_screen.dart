@@ -250,3 +250,26 @@ class _MorningScreen extends StatelessWidget {
     );
   }
 }
+
+
+/**
+ * Paleta Ajustada
+Mañana cálida con sensaciones de esperanza y alegría
+#FFDDC1 - Melocotón suave
+#FFD700 - Amarillo dorado
+#FFFACD - Amarillo claro (limón suave)
+#87CEEB - Azul cielo claro
+#98FB98 - Verde pálido
+Tarde brillante con una nube en el cielo en un campo de flores, de un bello jardín
+#FFDAB9 - Melocotón claro
+#FFD700 - Amarillo dorado
+#90EE90 - Verde claro
+#ADD8E6 - Azul claro
+#FFB6C1 - Rosa claro
+Anochecer con estrellas en el cielo de una noche tranquila
+#2F4F4F - Gris pizarra oscuro
+#FFD700 - Amarillo dorado (representando las estrellas)
+#2E8B57 - Verde azulado oscuro
+#483D8B - Azul medianoche
+#708090 - Gris azulado
+ */

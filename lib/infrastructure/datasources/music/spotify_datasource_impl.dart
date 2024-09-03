@@ -26,6 +26,7 @@ class SpotifyDatasourceImpl extends SpotifyDatasource{
       );
 
       final TokenEntity token = TokenEntity.fromJson(response.data);
+      print('token obtenido en dataspurce');
       return token;
     }  on DioException catch (e) {
       if (e.response?.statusCode == 401) {
@@ -46,6 +47,7 @@ class SpotifyDatasourceImpl extends SpotifyDatasource{
   @override
   Future<PlaylistEntity> getPlaylist(String token, String playlistUri) async{
     try{
+      print('entrando a get playlist');
       final response = await dio.get(
         'https://api.spotify.com/v1/playlists/$playlistUri/tracks',
         options: Options(
@@ -54,6 +56,7 @@ class SpotifyDatasourceImpl extends SpotifyDatasource{
       );
 
       final playlist = PlaylistEntity.fromJson(response.data);
+      print('playlist obtenida');
       return playlist;
 
     }on DioException catch (e) {
