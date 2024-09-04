@@ -10,12 +10,12 @@ dependencies:
   animate_do: ^3.3.4
   confetti: ^0.7.0
   dio: ^5.6.0
-  easy_url_launcher: ^0.0.7
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.1.0
   flutter_riverpod: ^2.5.1
   riverpod: ^2.5.1
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_lints: ^3.0.0

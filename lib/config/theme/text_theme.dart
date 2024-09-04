@@ -19,10 +19,10 @@ const TextStyle subtitulotresBlanco = TextStyle(fontSize: 14,  color: Colors.whi
 
 // bold
 
-const TextStyle tituloGrandeBold = TextStyle(fontSize: 40, fontFamily: 'Red Hat Bold');
+const TextStyle tituloGrandeBold = TextStyle(fontSize: 40, color: Color.fromARGB(192, 0, 0, 0),fontFamily: 'Red Hat Bold');
 const TextStyle tituloGrandeBlancoBold = TextStyle(fontSize: 40, fontFamily: 'Red Hat Bold', color: Colors.white);
 
-const TextStyle tituloPequenoBold = TextStyle(fontSize: 32, fontFamily: 'Red Hat Bold',);
+const TextStyle tituloPequenoBold = TextStyle(fontSize: 32, color: Color.fromARGB(192, 0, 0, 0),fontFamily: 'Red Hat Bold',);
 const TextStyle tituloPequenoBlancoBold = TextStyle(fontSize: 40, fontFamily: 'Red Hat Bold', color: Colors.white);
 
 const TextStyle subtituloUnoBold = TextStyle(fontSize: 32, fontFamily: 'Red Hat Bold',);

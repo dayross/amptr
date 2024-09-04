@@ -2,6 +2,7 @@
 
 // ignore_for_file: prefer_const_constructors
 
+import 'package:amptr/config/config.dart';
 import 'package:amptr/presentation/shared/widgets/widgets.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +22,12 @@ class GreetingScreen extends StatelessWidget {
       : dt.hour < 20
         ? _EveningScreen(size: size)
         : _NightScreen(size: size);
+    
+    
+    // return _NightScreen(size: size);
   }
 }
+
 
 class _NightScreen extends StatelessWidget {
   const _NightScreen({
@@ -35,7 +40,7 @@ class _NightScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 16, 22, 89),
+      backgroundColor: Color.fromARGB(255, 31, 27, 61),
       body: Stack(
         children: [
           Column(children: [
@@ -51,25 +56,67 @@ class _NightScreen extends StatelessWidget {
               ),
             ),
         ],),
+        // Positioned(
+        //   top: size.height*0.12,
+        //   right: size.width*0.15,
+        //   child: Transform.rotate(
+        //     angle: 4, 
+        //     child: SlideInRight(
+        //     delay: Duration(milliseconds: 600),
+        //     duration: Duration(milliseconds: 1500),
+        //     child: ZoomIn(
+        //       delay: Duration(milliseconds: 600),
+        //       duration: Duration(milliseconds: 3000),
+        //       child: Icon(Icons.rocket, color: Colors.red[600], size: 120,))))),
         Positioned(
-          top: size.height*0.12,
-          right: size.width*0.15,
-          child: Transform.rotate(
-            angle: 4, 
-            child: SlideInRight(
-            delay: Duration(milliseconds: 600),
-            duration: Duration(milliseconds: 1500),
-            child: ZoomIn(
-              delay: Duration(milliseconds: 600),
-              duration: Duration(milliseconds: 3000),
-              child: Icon(Icons.rocket, color: Colors.red[600], size: 120,))))),
-        Positioned(
-          top: size.height*0.08,
-          right: size.width*0.35,
+          top: size.height*0.1,
+          left: size.width*0.08,
           child: SlideInRight(
           delay: Duration(milliseconds: 600),
           duration: Duration(milliseconds: 1500),
-          child: Icon(Icons.star_rate_rounded, color: Colors.amber[400], size: 56,))),
+          child: Icon(Icons.star, color: Color(0xFFFFD700), size: 32,))),
+        Positioned(
+          top: size.height*0.12,
+          left: size.width*0.3,
+          child: SlideInRight(
+          delay: Duration(milliseconds: 600),
+          duration: Duration(milliseconds: 1500),
+          child: Icon(Icons.star, color: Color(0xFFFFD700), size: 32,))),
+        Positioned(
+          top: size.height*0.15,
+          right: size.width*0.4,
+          child: SlideInRight(
+          delay: Duration(milliseconds: 600),
+          duration: Duration(milliseconds: 1500),
+          child: Icon(Icons.star, color: Color(0xFFFFD700), size: 32,))),
+        Positioned(
+          top: size.height*0.21,
+          right: size.width*0.2,
+          child: SlideInRight(
+          delay: Duration(milliseconds: 600),
+          duration: Duration(milliseconds: 1500),
+          child: Icon(Icons.star, color: Color(0xFFFFD700), size: 32,))),
+        Positioned(
+          top: size.height*0.28,
+          right: size.width*0.02,
+          child: SlideInRight(
+          delay: Duration(milliseconds: 600),
+          duration: Duration(milliseconds: 1500),
+          child: Icon(Icons.star, color: Color(0xFFFFD700), size: 32,))),
+        Positioned(
+          top: size.height*0.34,
+          right: size.width*0.36,
+          child: SlideInRight(
+          delay: Duration(milliseconds: 600),
+          duration: Duration(milliseconds: 1500),
+          child: Icon(Icons.star, color: Color(0xFFFFD700), size: 32,))),
+        Positioned(
+         top: size.height*0.27,
+          left: size.width*0.25,
+          child: SlideInRight(
+          delay: Duration(milliseconds: 600),
+          duration: Duration(milliseconds: 1500),
+          child: Icon(Icons.star, color: Color(0xFFFFD700), size: 32,))),
         Positioned(
           bottom: size.height*0.38,
           left: size.width*0.07,
@@ -107,7 +154,7 @@ class _NightScreen extends StatelessWidget {
             child: FadeIn(
               delay: Duration(milliseconds: 600),
               duration: Duration(milliseconds: 1000),
-              child: Text("Buenas noches", style: TextStyle(fontSize: 56, fontWeight: FontWeight.w900),)))),
+              child: Text("Buenas noches", style: tituloGrandeBold,)))),
           
           ]
       ),
@@ -139,7 +186,7 @@ class _EveningScreen extends StatelessWidget {
                   width: size.width*2,
                   child: ClipRRect(
                     child: CustomPaint(
-                      painter: QuarterCirclePainter(CircleAlignment.bottomLeft, Colors.green[300]!),),),
+                      painter: QuarterCirclePainter(CircleAlignment.bottomLeft, Color(0xFF81C784)),),),
                 ),
               ),
           ],),
@@ -149,38 +196,38 @@ class _EveningScreen extends StatelessWidget {
             child: SpinPerfect(
               spins: 4,
               duration: Duration(milliseconds: 2000),
-              child: Icon(Icons.filter_vintage_rounded, color: Colors.yellow, size: 82,))),
+              child: Icon(Icons.filter_vintage_rounded, color: Color(0xFFFFD700), size: size.width*0.18,))),
           Positioned(
             bottom: size.height*0.2,
             left: size.width*0.15,
             child: SpinPerfect(
               spins: 4,
               duration: Duration(milliseconds: 2000),
-              child: Icon(Icons.filter_vintage, color: Color.fromARGB(255, 233, 105, 1), size: 64,))),
+              child: Icon(Icons.filter_vintage, color: Color.fromARGB(255, 233, 105, 1), size: size.width*0.2,))),
           Positioned(
             bottom: size.height*0.3,
             right: size.width*0.4,
             child: SpinPerfect(
               spins: 4,
               duration: Duration(milliseconds: 2000),
-              child: Icon(Icons.filter_vintage, color: Colors.pinkAccent, size: 56,))),
+              child: Icon(Icons.filter_vintage, color: Colors.pinkAccent, size: size.width*0.15,))),
           Positioned(
             bottom: size.height*0.4,
             left: size.width*0.17,
             child: FadeIn(
               delay: Duration(milliseconds: 600),
               duration: Duration(milliseconds: 1000),
-              child: Icon(Icons.eco, color: Colors.green[600], size: 72,))),
+              child: Icon(Icons.eco, color: Color(0xFF43A047), size: size.width*0.16,))),
           Positioned(
             top: size.height*0.15,
             right: size.width*0.17,
             child: FadeIn(
               delay: Duration(milliseconds: 600),
               duration: Duration(milliseconds: 1000),
-              child: Icon(Icons.cloud, color: Colors.white70, size: 120,))),
+              child: Icon(Icons.cloud, color: Colors.white70, size: size.width*0.3,))),
             
             Positioned(
-            bottom: size.height*0.32,
+            bottom: size.height*0.28,
             left: size.width*0.05,
             child: SlideInRight(
               delay: Duration(milliseconds: 600),
@@ -188,10 +235,12 @@ class _EveningScreen extends StatelessWidget {
               child: FadeIn(
                 delay: Duration(milliseconds: 600),
                 duration: Duration(milliseconds: 1000),
-                child: Text("Buenas tardes", style: TextStyle(
-                  fontSize: 56, 
-                  fontWeight: FontWeight.w900,
-                  color: const Color.fromARGB(192, 0, 0, 0)),)))),
+                child: SizedBox(
+                  width: size.width*0.75,
+                  height: size.height*0.2,
+                  child: FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text("Buenas tardes", style: TextStyle(fontWeight: FontWeight.bold),)))))),
             ]
         ),
       ),
@@ -210,7 +259,7 @@ class _MorningScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[100],
+      backgroundColor: Color(0xFF87CEEB),
       body: Stack(
         children: [
           Column(children: [
@@ -222,7 +271,7 @@ class _MorningScreen extends StatelessWidget {
                 width: size.width*2,
                 child: ClipRRect(
                   child: CustomPaint(
-                    painter: QuarterCirclePainter(CircleAlignment.bottomLeft, Colors.yellow[100]!),),),
+                    painter: QuarterCirclePainter(CircleAlignment.bottomLeft, Color(0xFFFFFACD)),),),
               ),
             ),
         ],),
@@ -244,32 +293,9 @@ class _MorningScreen extends StatelessWidget {
             child: SpinPerfect(
               spins: 4,
               duration: Duration(milliseconds: 2000),
-              child: Icon(Icons.star, color: Colors.pink[200], size: 64,))))
+              child: Icon(Icons.star, color: Color(0xFFFFB6C1), size: 64,))))
           ]
       ),
     );
   }
 }
-
-
-/**
- * Paleta Ajustada
-Mañana cálida con sensaciones de esperanza y alegría
-#FFDDC1 - Melocotón suave
-#FFD700 - Amarillo dorado
-#FFFACD - Amarillo claro (limón suave)
-#87CEEB - Azul cielo claro
-#98FB98 - Verde pálido
-Tarde brillante con una nube en el cielo en un campo de flores, de un bello jardín
-#FFDAB9 - Melocotón claro
-#FFD700 - Amarillo dorado
-#90EE90 - Verde claro
-#ADD8E6 - Azul claro
-#FFB6C1 - Rosa claro
-Anochecer con estrellas en el cielo de una noche tranquila
-#2F4F4F - Gris pizarra oscuro
-#FFD700 - Amarillo dorado (representando las estrellas)
-#2E8B57 - Verde azulado oscuro
-#483D8B - Azul medianoche
-#708090 - Gris azulado
- */
