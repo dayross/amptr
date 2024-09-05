@@ -2,7 +2,7 @@
 import 'package:amptr/domain/entities/music/playlist_entity.dart';
 import 'package:amptr/domain/entities/music/token_spotify_entity.dart';
 import 'package:amptr/domain/repositories/repositories.dart';
-import 'package:amptr/infrastructure/datasources/music/spotify_datasource_impl.dart';
+import 'package:amptr/infrastructure/datasources/datasources.dart';
 
 class SpotifyRepositoryImpl extends SpotifyRepository{
 

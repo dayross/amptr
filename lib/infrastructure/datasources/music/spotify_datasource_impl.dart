@@ -26,7 +26,6 @@ class SpotifyDatasourceImpl extends SpotifyDatasource{
       );
 
       final TokenEntity token = TokenEntity.fromJson(response.data);
-      print('token obtenido en dataspurce');
       return token;
     }  on DioException catch (e) {
       if (e.response?.statusCode == 401) {

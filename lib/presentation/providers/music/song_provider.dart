@@ -3,8 +3,8 @@
 import 'dart:math';
 
 import 'package:amptr/config/constants/environment.dart';
-import 'package:amptr/domain/entities/music/playlist_entity.dart';
-import 'package:amptr/infrastructure/repositories/music/spotify_repository_impl.dart';
+import 'package:amptr/domain/entities/entities.dart';
+import 'package:amptr/infrastructure/repositories/repositories.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
@@ -24,7 +24,6 @@ class TrackNotifier extends StateNotifier<TrackState> {
 
       state = state.copyWith(
         token: response.accessToken);
-      print('token obtenido');
     } catch(e){
       rethrow;
     }
@@ -45,7 +44,6 @@ class TrackNotifier extends StateNotifier<TrackState> {
       );
 
     }catch(e){
-      print(e);
       rethrow;
     }
   }

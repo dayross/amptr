@@ -146,7 +146,7 @@ class _NightScreen extends StatelessWidget {
             duration: Duration(milliseconds: 1000),
             child: Icon(Icons.circle, color: Colors.grey, size: 42))),
         Positioned(
-          bottom: size.height*0.32,
+          bottom: size.height*0.28,
           left: size.width*0.05,
           child: SlideInRight(
             delay: Duration(milliseconds: 600),
@@ -154,7 +154,12 @@ class _NightScreen extends StatelessWidget {
             child: FadeIn(
               delay: Duration(milliseconds: 600),
               duration: Duration(milliseconds: 1000),
-              child: Text("Buenas noches", style: tituloGrandeBold,)))),
+              child: SizedBox(
+                  width: size.width*0.75,
+                  height: size.height*0.2,
+                  child: FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text("Buenas noches", style: TextStyle(fontWeight: FontWeight.bold),)),)))),
           
           ]
       ),
@@ -276,7 +281,7 @@ class _MorningScreen extends StatelessWidget {
             ),
         ],),
         Positioned(
-          bottom: size.height*0.32,
+          bottom: size.height*0.28,
           left: size.width*0.05,
           child: SlideInRight(
             delay: Duration(milliseconds: 600),
@@ -284,7 +289,12 @@ class _MorningScreen extends StatelessWidget {
             child: FadeIn(
               delay: Duration(milliseconds: 600),
               duration: Duration(milliseconds: 1000),
-              child: Text("Buenos dias", style: TextStyle(fontSize: 56, fontWeight: FontWeight.w900),)))),
+              child: SizedBox(
+                  width: size.width*0.75,
+                  height: size.height*0.2,
+                  child: FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text("Buenos dias", style: TextStyle(fontWeight: FontWeight.bold),)),)))),
         Positioned(
           top: size.height*0.15,
           right: size.width*0.15,
