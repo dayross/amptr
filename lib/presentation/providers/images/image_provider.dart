@@ -6,8 +6,12 @@ import 'package:amptr/domain/entities/entities.dart';
 import 'package:amptr/infrastructure/repositories/repositories.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+final imageProvider = StateNotifierProvider<ImageNotifier, ImageState>((ref) {
+  return ImageNotifier();
+});
+
 class ImageNotifier extends StateNotifier<ImageState>{
-  ImageNotifier(super.state);
+  ImageNotifier() : super(ImageState());
 
   final repository = ImagesRepositoryImpl();
 
