@@ -1,8 +1,6 @@
 
 
-// ignore_for_file: prefer_const_constructors
 
-import 'package:amptr/config/config.dart';
 import 'package:amptr/presentation/shared/widgets/widgets.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +38,7 @@ class _NightScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       backgroundColor: Color.fromARGB(255, 31, 27, 61),
       body: Stack(
         children: [
@@ -179,6 +178,7 @@ class _EveningScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBody: true,
         backgroundColor: Colors.blue[300],
         body: Stack(
           children: [
@@ -264,6 +264,7 @@ class _MorningScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       backgroundColor: Color(0xFF87CEEB),
       body: Stack(
         children: [

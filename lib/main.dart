@@ -20,8 +20,11 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
-      home: const DailyPhotoScreen()
+      // home: const DailyPhotoScreen()
       // home: const DailySongScreen()
+      // home: const HomeScreen()
+      // home: const DailySongScreen()
+      home: const ButtonScreen()
     );
   }
 }

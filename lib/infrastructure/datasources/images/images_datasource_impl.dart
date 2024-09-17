@@ -11,7 +11,7 @@ class ImagesDatasourceImpl extends ImagesDatasource{
   Future<AlbumEntity> getAlbumImages(String cid, String albumHash) async{
     try{
       final response = await dio.get(
-        'https://api.imgur.com/3/album/${albumHash}',
+        'https://api.imgur.com/3/album/${albumHash}/images',
         options: Options(
           headers: {
             'Authorization' : 'CLIENT-ID $cid'

@@ -27,10 +27,10 @@ class ImageNotifier extends StateNotifier<ImageState>{
     }
   }
 
-  void chooseSong() async{
+  void chooseImage() async{
     final _random = Random();
 
-    print('choosing song from album');
+    print('choosing image from album');
 
     if (state.album==null){ 
       getAlbum();
@@ -64,7 +64,7 @@ class ImageState{
   ImageState({
     this.image, 
     this.album, 
-    this.loading = false, 
+    this.loading = true, 
   });
 
   ImageState copyWith({
