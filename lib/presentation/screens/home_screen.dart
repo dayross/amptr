@@ -1,5 +1,6 @@
 
 
+import 'package:amptr/config/config.dart';
 import 'package:amptr/presentation/providers/navigation_provider.dart';
 import 'package:amptr/presentation/screens/screens.dart';
 import 'package:amptr/presentation/shared/widgets/widgets.dart';
@@ -32,54 +33,42 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         _selectedIndex = index;
       });
     }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-    // final navigationProv = ref.watch(navigationProvider);
     final colors = Theme.of(context).colorScheme;
 
-    final screens = [
-      FadeInRight(
-        duration: const Duration(seconds: 1),
-        child: const GreetingScreen()),
-      const DailySongScreen(),
-      const DailyPhotoScreen(),
-      const DailyPoemScreen(),
-    ];
-
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      extendBody: true,
       bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
         backgroundColor: Colors.transparent,
-        unselectedItemColor: colors.secondary,
-        selectedItemColor: colors.primary,
-        // backgroundColor: Colors.black.withOpacity(0.1),
+        elevation: 0,
         type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
+        items: const [
           BottomNavigationBarItem(
           icon: Icon(Icons.home),
            label: 'Inicio'),
            
-        BottomNavigationBarItem(
-          icon: Icon(Icons.music_note),
-           label: 'Canción'),
-           
-        BottomNavigationBarItem(
-          icon: Icon(Icons.photo),
-           label: 'Foto'),
-           
-        BottomNavigationBarItem(
-          icon: Icon(Icons.text_snippet_rounded),
-           label: 'Poema'),           
+          BottomNavigationBarItem(
+            icon: Icon(Icons.music_note),
+             label: 'Canción'),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.photo),
+             label: 'Foto'),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.text_snippet_rounded),
+             label: 'Poema'),           
         ],
         currentIndex: _selectedIndex,
+        selectedItemColor: colors.primary,
         onTap: onItemTapped,
-      ),
-      body: screens[_selectedIndex],
+        ),
+      extendBodyBehindAppBar: true,
+      extendBody: true,
+      body: _screens[_selectedIndex],
         );
-      // body: screens[navigationProv],
   }
 }
 
