@@ -1,9 +1,6 @@
 
 
-import 'package:amptr/config/config.dart';
-import 'package:amptr/presentation/providers/navigation_provider.dart';
 import 'package:amptr/presentation/screens/screens.dart';
-import 'package:amptr/presentation/shared/widgets/widgets.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +10,10 @@ class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen> {
+class HomeScreenState extends ConsumerState<HomeScreen> {
 
   int _selectedIndex = 0;
   static final List<Widget> _screens = <Widget>[

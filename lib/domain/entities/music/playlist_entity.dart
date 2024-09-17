@@ -4,6 +4,8 @@
 //
 //     final playlistEntity = playlistEntityFromJson(jsonString);
 
+// ignore_for_file: constant_identifier_names
+
 import 'dart:convert';
 
 PlaylistEntity playlistEntityFromJson(String str) => PlaylistEntity.fromJson(json.decode(str));

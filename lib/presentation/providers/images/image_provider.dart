@@ -28,7 +28,7 @@ class ImageNotifier extends StateNotifier<ImageState>{
   }
 
   void chooseImage() async{
-    final _random = Random();
+    final random = Random();
 
     print('choosing image from album');
 
@@ -39,10 +39,10 @@ class ImageNotifier extends StateNotifier<ImageState>{
       await Future.delayed(const Duration(milliseconds: 100));
     }
     
-    ImageEntity img = state.album![_random.nextInt(state.album!.length)];
+    ImageEntity img = state.album![random.nextInt(state.album!.length)];
 
     while(img.link == state.image){
-      img = state.album![_random.nextInt(state.album!.length)];
+      img = state.album![random.nextInt(state.album!.length)];
     }
 
     await Future.delayed(const Duration(milliseconds: 400));

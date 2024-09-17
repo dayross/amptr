@@ -9,7 +9,25 @@ class DailyPoemScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
-    return Container();
+    
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: (size.width*0.04), vertical: (size.height*0.015)),
+        // padding: EdgeInsets.fromLTRB(size.width*0.02, size.height*0.007, size.width*0.02, size.height*0.1),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FittedBox(
+              fit: BoxFit.fill,
+              child: Container(
+                height: double.infinity,
+                width: double.infinity,
+                color: Colors.red,),
+            )
+          ],
+        ),
+      ),
+    );
 
     // return Scaffold(
     //   body: SingleChildScrollView(

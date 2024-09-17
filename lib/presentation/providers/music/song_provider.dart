@@ -49,7 +49,7 @@ class TrackNotifier extends StateNotifier<TrackState> {
   }
 
   void chooseTrack() async{
-    final _random = Random();
+    final random = Random();
 
     if (state.playlist==null){ 
       getPlaylist();
@@ -58,10 +58,10 @@ class TrackNotifier extends StateNotifier<TrackState> {
       await Future.delayed(const Duration(milliseconds: 100));
     }
     
-    Item song = state.playlist!.items[_random.nextInt(state.playlist!.items.length)];
+    Item song = state.playlist!.items[random.nextInt(state.playlist!.items.length)];
 
     while(state.song == song.track){
-      song = state.playlist!.items[_random.nextInt(state.playlist!.items.length)];
+      song = state.playlist!.items[random.nextInt(state.playlist!.items.length)];
     }
 
     await Future.delayed(const Duration(milliseconds: 600));

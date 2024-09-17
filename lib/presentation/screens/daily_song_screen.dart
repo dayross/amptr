@@ -3,7 +3,6 @@ import 'dart:math';
 
 import 'package:amptr/config/config.dart';
 import 'package:amptr/presentation/providers/music/song_provider.dart';
-import 'package:animate_do/animate_do.dart';
 import 'package:confetti/confetti.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
@@ -28,15 +27,16 @@ class TrackScreen extends ConsumerStatefulWidget {
   
 
   @override
-  _TrackScreenState createState() => _TrackScreenState();
+  TrackScreenState createState() => TrackScreenState();
 }
 
-class _TrackScreenState extends ConsumerState<TrackScreen> {
+class TrackScreenState extends ConsumerState<TrackScreen> {
 
   late ConfettiController _confettiCont;
 
   @override
   void initState() {
+    super.initState();
     _confettiCont = ConfettiController(duration: const Duration(milliseconds: 800));
     ref.read(trackProvider);
   }
@@ -78,9 +78,9 @@ class _TrackScreenState extends ConsumerState<TrackScreen> {
             ),
             SizedBox(height: size.height*0.06,),
             ClipRRect(
+              borderRadius: BorderRadius.circular(20),
               child: Image.network(trackProv.song!.album.images[0].url,
-              width: size.width*0.6,),
-              borderRadius: BorderRadius.circular(20),),
+              width: size.width*0.6,),),
             SizedBox(height: size.height*0.04,),
             SizedBox(
               height: size.height*0.05,
