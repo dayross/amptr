@@ -12,6 +12,7 @@ migrate_working_dir/
 /misc/
 .env
 
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -43,6 +44,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+# /android/app/src/main/res
 
 # iOS config
 .xcworkspace
+# ios/Runner/Assets.xcassets
