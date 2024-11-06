@@ -64,7 +64,7 @@ class DailyPhotoScreenState extends ConsumerState<DailyPhotoScreen> with TickerP
         child: Center(child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-          const Text('Un recuerdo de nuestro amor', style: subtituloUnoBold,),
+          const Text('Un recuerdo con cariño <3', style: subtituloUnoBold,),
           SizedBox(
             width: imgSize,
             child: ClipRRect(
@@ -79,7 +79,7 @@ class DailyPhotoScreenState extends ConsumerState<DailyPhotoScreen> with TickerP
               fit: BoxFit.fitWidth,
               child: Padding(
                 padding: EdgeInsets.all(12),
-                child: Text('¡Dame otra!', style: subtituloDosBlancoBold,),
+                child: Text('¡Dame otra!', style: subtituloDosBold,),
               ),
             ))
         ],),),
