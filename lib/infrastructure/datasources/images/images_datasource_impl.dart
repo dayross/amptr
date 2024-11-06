@@ -10,6 +10,7 @@ class ImagesDatasourceImpl extends ImagesDatasource{
   @override
   Future<AlbumEntity> getAlbumImages(String cid, String albumHash) async{
     try{
+      print("estamos en dio obteniendo response");
       final response = await dio.get(
         'https://api.imgur.com/3/album/$albumHash/images',
         options: Options(
@@ -19,6 +20,7 @@ class ImagesDatasourceImpl extends ImagesDatasource{
         )
       );
 
+      print("salimos del dio vamos a hacer el fromJson");
       final AlbumEntity album = AlbumEntity.fromJson(response.data);
       print('album obtenido');
       return album;

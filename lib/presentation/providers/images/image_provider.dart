@@ -32,9 +32,9 @@ class ImageNotifier extends StateNotifier<ImageState>{
 
     print('choosing image from album');
 
-    if (state.album==null){ 
-      getAlbum();
-    }
+    if (state.album == null) getAlbum();
+
+
     while(state.album==null){
       await Future.delayed(const Duration(milliseconds: 100));
     }
