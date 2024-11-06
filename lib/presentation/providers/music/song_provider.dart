@@ -19,9 +19,11 @@ class TrackNotifier extends StateNotifier<TrackState> {
 
   void getToken() async{
     try{
+      print("obteniendo token");
       state = state.copyWith(loading: true);
       final response = await repository.getToken(Environment.spotifyCid, Environment.spotifySecret);
 
+      print("token obtenido, asignandolo al state");
       state = state.copyWith(
         token: response.accessToken);
     } catch(e){
@@ -36,7 +38,7 @@ class TrackNotifier extends StateNotifier<TrackState> {
       while(state.token.isEmpty){
         await Future.delayed(const Duration(milliseconds: 100));
       }
-
+      print("obteniendo playlist");
       final response = await repository.getPlaylist(state.token, Environment.playlistUri);
 
       state = state.copyWith(

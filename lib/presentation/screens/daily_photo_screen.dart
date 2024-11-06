@@ -64,14 +64,14 @@ class DailyPhotoScreenState extends ConsumerState<DailyPhotoScreen> with TickerP
         child: Center(child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-          const Text('Hola mundo', style: subtituloUnoBold,),
+          const Text('Un recuerdo de nuestro amor', style: subtituloUnoBold,),
           SizedBox(
             width: imgSize,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(imageProv.image!)),
           ),
-          FilledButton(
+          FilledButton.tonal(
             onPressed: (){
               ref.watch(imageProvider.notifier).chooseImage();
             }, 

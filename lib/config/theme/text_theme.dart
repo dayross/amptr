@@ -8,7 +8,7 @@ const TextStyle tituloGrandeBlanco = TextStyle(fontSize: 40,  color: Colors.whit
 const TextStyle tituloPequeno = TextStyle(fontSize: 32, );
 const TextStyle tituloPequenoBlanco = TextStyle(fontSize: 40,  color: Colors.white);
 
-const TextStyle subtituloUno = TextStyle(fontSize: 32, );
+const TextStyle subtituloUno = TextStyle(fontSize: 32,);
 const TextStyle subtituloUnoBlanco = TextStyle(fontSize: 24,  color: Colors.white);
 
 const TextStyle subtituloDos = TextStyle(fontSize: 16, );

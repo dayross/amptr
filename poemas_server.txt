@@ -1,0 +1,105 @@
+COMO HACER FUNCIONAR API EN SERVER UBUNTU 22.04
+
+sudo apt install git
+sudo apt install python3
+sudo apt install nginx
+sudo apt install ufw
+sudo apt install python3-pip python3-dev
+
+
+sudo ufw allow 80
+sudo ufw allow 3000
+sudo ufw allow http
+sudo ufw allow 8080
+sudo ufw allow 'Nginx Full'
+sudo ufw enable
+
+
+git clone https://github.com/dayross/poemas_api_.git
+cd poemas_api_
+
+python3 -m venv poemas-venv
+source poemas-venv/bin/activate
+
+pip install -r requirements.txt
+
+uvicorn main:poemas --host 0.0.0.0 --port 8080 
+
+pip install gunicorn
+
+vim gunicorn_conf.py
+
+$$ dentro del archivo
+ 
+bind = "0.0.0.0:8000"
+workers = 4
+
+$$
+
+
+gunicorn -k uvicorn.workers.UvicornWorker -c gunicorn_conf.py main:poemas
+
+sudo nano /etc/nginx/sites-available/fastapi
+
+server {
+    listen 80;
+    server_name IP_ADDRESS;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/fastapi /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+
+sudo vim /etc/systemd/system/fastapi.service
+
+
+$$
+
+[Unit]
+Description=FastAPI service
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/poemas_api_
+ExecStart=/root/poemas-venv/bin/gunicorn -k uvicorn.workers.UvicornWorker -c /root/poemas_api_/gunicorn_conf.py main:poemas
+
+[Install]
+WantedBy=multi-user.target
+
+$$
+
+
+sudo systemctl daemon-reload
+sudo systemctl start fastapi
+sudo systemctl enable fastapi
+
+
+ya entras a la ip
+
+
+
+daemon: 
+
+gunicorn -k uvicorn.workers.UvicornWorker -c gunicorn_conf.py main:poemas --daemon
+
+
+
+nohup:
+
+nohup gunicorn -k uvicorn.workers.UvicornWorker -c gunicorn_conf.py main:poemas &
+
+
+
+
+
+
