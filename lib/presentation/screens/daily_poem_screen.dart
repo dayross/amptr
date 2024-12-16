@@ -50,15 +50,15 @@ class _DailyPoemScreenState extends ConsumerState<DailyPoemScreen> {
           Text(poemProv.poema?.contenido.nombre == ""
           ? ""
           : '"${poemProv.poema?.contenido.nombre}"', style: subtituloUno.copyWith(fontSize: 24, fontWeight: FontWeight.bold),),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Container(
             width: size.width*0.9,
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 239, 244, 233),
+              color: const Color.fromARGB(255, 239, 244, 233),
               borderRadius: BorderRadius.circular(20)
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 15, 
                 vertical: 25), 
               child: SingleChildScrollView(

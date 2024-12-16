@@ -1,6 +1,5 @@
 
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 enum CircleAlignment {
@@ -8,6 +7,7 @@ enum CircleAlignment {
   topRight,
   bottomLeft,
   bottomRight,
+  bottom
 }
 
 
@@ -28,6 +28,7 @@ class QuarterCirclePainter extends CustomPainter {
             : circleAlignment == CircleAlignment.bottomLeft
                 ? Offset(.0, size.height)
                 : Offset(size.width, size.height);
+    // canvas.drawArc(Rect.fromCenter(center: Offset(size.height, size.width*0.7), width: size.width, height: size.height), math.pi, math.pi, false, Paint()..color = color);
     canvas.drawCircle(offset, radius, Paint()..color = color);
   }
 

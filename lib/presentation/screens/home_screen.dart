@@ -34,6 +34,7 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    // ignore: unused_local_variable
     final colors = Theme.of(context).colorScheme;
 
     return Scaffold(
@@ -59,7 +60,8 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
              label: 'Poema'),           
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: colors.primary,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black,
         onTap: onItemTapped,
         ),
       extendBodyBehindAppBar: true,
